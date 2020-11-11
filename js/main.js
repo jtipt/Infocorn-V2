@@ -1,4 +1,4 @@
-$("#searchForm").on("submit", function (e) {
+$("#searchForm").on("submit", function(e) {
    let searchText = $("#searchText").val();
    getMovies(searchText);
    e.preventDefault(); //stops from from actually submitting to file
@@ -12,13 +12,13 @@ function getMovies(searchText) {
             searchText
       )
 
-      .then(function (response) {
+      .then(function(response) {
          console.log(response);
          let movies = response.data.results;
          let output = "";
 
          //after search
-         $.each(movies, function (index, movie) {
+         $.each(movies, function(index, movie) {
             output += `
             <div class="col-xs-6 col-md-4 col-lg-3">
                <div class="text-center">
@@ -31,7 +31,7 @@ function getMovies(searchText) {
 
          $("#movies").html(output);
       })
-      .catch(function (error) {});
+      .catch(function(error) {});
 }
 
 function movieSelected(id) {
@@ -48,7 +48,7 @@ function getMovie() {
             movieId +
             "?api_key=1512aa34ca08b654cc993f8e4e2e539e&append_to_response=videos,credits"
       )
-      .then(function (response) {
+      .then(function(response) {
          console.log(response);
          let movie = response.data;
          let genres_len = movie.genres.length;
@@ -63,16 +63,32 @@ function getMovie() {
          }
          let cast = response.data.credits.cast;
          let actors = "";
-         $.each(cast, function (index, c) {
+         for (var i = 0; i < 10; i++) {
             actors += `
-                 <ul style="display: inline-block; font-size:24px;padding:10px;"><li>${c.name}</li></ul>
+                 <ul style="display: inline-block; font-size:24px;padding:10px;">
+                 <li><img src="https://image.tmdb.org/t/p/w342${cast[i].profile_path}" class="cast_image"></li>
+                 <li>${cast[i].name}</li>
+                  </ul>
           `;
-         });
-
+         }
+         let vids = response.data.videos.results;
+         vid = "";
+         for (var i = 0; i < vids.length; i++) {
+            if (vids.length == 0) {
+               vid += "No Trailers Avialable";
+            } else {
+               vid += `
+                <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/${vids[i].key}">
+                </iframe>
+                `;
+            }
+         }
+         console.log(vids);
          let output = `
          <div class = "row">
             <div class = "col-md-4">
-            <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" class="">
+            <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" class="poster">
             </div>
             <div class = "col-md-8">
             <a href="http://imdb.com/title/${movie.imdb_id}/"><h2 class="movieHead">${movie.title}</h2></a>
@@ -113,12 +129,22 @@ function getMovie() {
             </li>
             </ul>
          </div>
+         <div class = "row">
+               <ul class="tilesWrap">
+               <li class = "l l2">
+               <h2>Trailers</h2>
+               <h3>Trailers</h3>
+               ${vid}
+               <hr>
+               </li>
+            <ul>
+         </div>
          `;
 
          $("#movie").html(output);
          $("title").html(movie.title);
       })
-      .catch(function (error) {});
+      .catch(function(error) {});
 }
 
 function scrollWin() {
@@ -130,17 +156,11 @@ function todo() {
    getMovies(searchText);
 }
 
-
 function myFunction() {
    var x = document.getElementById("myTopnav");
    if (x.className === "topnav") {
-     x.className += " responsive";
+      x.className += " responsive";
    } else {
-     x.className = "topnav";
+      x.className = "topnav";
    }
- }
-
-
-
-
-
+}
