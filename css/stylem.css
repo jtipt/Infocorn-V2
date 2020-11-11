@@ -188,7 +188,7 @@ footer {
    background: #fff;
    transform: skew(2deg, 2deg);
 }
-.tilesWrap .l:after {
+/* .tilesWrap .l:after {
    content: "";
    position: absolute;
    width: 40%;
@@ -196,7 +196,7 @@ footer {
    left: 0;
    top: 0;
    background: rgba(255, 255, 255, 0.02);
-}
+} */
 .tilesWrap .l:before {
    background: #c9ffbf;
    background: -webkit-linear-gradient(to right, #ffafbd, #c9ffbf);

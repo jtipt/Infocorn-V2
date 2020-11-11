@@ -46,7 +46,7 @@ function getMovie() {
       .get(
          "http://api.themoviedb.org/3/movie/" +
             movieId +
-            "?api_key=1512aa34ca08b654cc993f8e4e2e539e&append_to_response=videos,credits"
+            "?api_key=1512aa34ca08b654cc993f8e4e2e539e&append_to_response=videos,credits,recommendations"
       )
       .then(function(response) {
          console.log(response);
@@ -72,7 +72,7 @@ function getMovie() {
           `;
          }
          let vids = response.data.videos.results;
-         vid = "";
+         let vid = "";
          for (var i = 0; i < vids.length; i++) {
             if (vids.length == 0) {
                vid += "No Trailers Avialable";
@@ -84,7 +84,19 @@ function getMovie() {
                 `;
             }
          }
-         console.log(vids);
+         let recom = response.data.recommendations.results;
+         let recomd = "";
+         for (var i = 0; i < 8; i++) {
+            recomd += `
+            <div class="col-xs-6 col-md-4 col-lg-3">
+               <div class="text-center">
+                  <img src="https://image.tmdb.org/t/p/w185${recom[i].poster_path}" alt="404 Not Found">
+                  <a onclick="movieSelected('${recom[i].id}')" href="#"><h5>${recom[i].title}</h5></a>
+               </div> 
+            </div>
+            `;
+         }
+         console.log(recom);
          let output = `
          <div class = "row">
             <div class = "col-md-4">
@@ -135,6 +147,16 @@ function getMovie() {
                <h2>Trailers</h2>
                <h3>Trailers</h3>
                ${vid}
+               <hr>
+               </li>
+            <ul>
+         </div>
+         <div class = "row">
+               <ul class="tilesWrap">
+               <li class = "l l2">
+               <h2>Recomendations</h2>
+               <h3>Recomendations</h3>
+               ${recomd}
                <hr>
                </li>
             <ul>
