@@ -12,15 +12,19 @@
          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Permanent+Marker&family=Ubuntu&display=swap"
          rel="stylesheet"
       />
+      <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    
       <link rel="stylesheet" type="text/css" href="css/style.css" />
       <title>InfoCorn </title>
    </head>
    <body>
       <div class="topnav" id="myTopnav">
-         <a href="#home" class="active">InfoCorn</a>
-         <a href="rateus.php">Rate Us</a>
+         <a href="index.html" class="active">InfoCorn</a>
+         <a href="rating.html">Rate Us</a>
          <a href="contact.php">Contact Us</a>
-         
+         <a href="forum/forum.php" > Infocorn Forum</a>
+
          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
            <i class="fa fa-bars"></i>
          </a>
@@ -45,43 +49,62 @@
       <div class="container main-movies">
 
         <h1 id="">Top Charts</h1>
-        <div class="gallery">
-         <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(522162)">
-            <img src="posters/midway (2019).jpeg" alt="Midway2019" width="600" height="200">
-         </a>
-       </div>
-       
-       <div class="gallery">
-         <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(24428)">
-            <img src="posters/theavengers.jpeg" alt="Avengers" width="600" height="200">
-         </a>
-       </div>
-       
-       <div class="gallery">
-         <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(491418)">
-            <img src="posters/instantfamily1.jpeg" alt="Instant Family" width="600" height="200">
-         </a>
-       </div>
-       
-       <div class="gallery">
-         <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(331482)">
-            <img src="posters/littlewomen1.jpg" alt="Little Women" width="600" height="200">
-         </a>
-       </div>
-       <div class="gallery">
-         <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(552178)">
-            <img src="posters/dark waters (2019).jpg" alt="Dark Waters" width="600" height="200">
-         </a>
-       </div>
-       <div class="gallery">
-         <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(271110)">
-            <img src="posters/captain america- civil war (2016).jpeg" alt="Captain America Civil War" width="600" height="200">
-         </a>
-       </div>
-     
-
         
+<div class="carousel js-flickity" >
+ 
+  <div class="carousel-cell" >
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(372058)">
+      <img src="posters/yourname.jpg" alt="Your Name">
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(129)">
+      <img src="posters/spirited.jpg" alt="spirited Away">
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(331482)">
+      <img src="posters/littlewomen1.jpg" alt="Little Women">
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(491418)">
+      <img src="posters/instantfamilyf.jpg" alt="Instant Family">
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(24428)">
+      <img src="posters/theavengers.jpeg" alt="Avengers">
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(522162)">
+      <img src="posters/midwayf.jpg" alt="Midway2019">
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(635302)">
+      <img src="posters/demon.jpg" alt="Demon Slayer" >
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(497582)">
+      <img src="posters/enola.jpg" alt="Enola Holmes" >
+   </a>
+  </div>
+  <div class="carousel-cell">
+    <a target="_blank" href="movie.html" onclick="getMovie(), movieSelected(531219)">
+      <img src="posters/witches.jpg" alt="The Witches" >
+   </a>
+  </div>
+</div>
 
+  
+       
+
+       
+       
+      
       <div id="sep">
             
         <h1 style="color: white;">Trending</h1>
@@ -189,10 +212,13 @@
          </p>
          <p class="cr"><i class="fa fa-copyright" aria-hidden="true"></i> 2020 Infocorn.com</p>
       </footer>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
    </body>
    <script src="https://kit.fontawesome.com/57456f662e.js" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
+
    <script src="js/main.js" type="text/javascript"></script>
 </html>

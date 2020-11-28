@@ -1,0 +1,196 @@
+* {
+   box-sizing: border-box;
+   font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans",
+      "droid sans", "helvetica neue", Arial, sans-serif;
+   font-size: 16px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+body {
+   background-color: #1b262c;
+   margin: 0;
+   color: white;
+}
+
+.topnav {
+   overflow: hidden;
+   background-color: #3c2c3e;
+}
+
+.topnav a {
+   font-family: Montserrat;
+   float: left;
+   display: block;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+}
+
+.topnav a:hover {
+   background-color: #ddd;
+   color: black;
+}
+
+.topnav a.active {
+   background-color: #b52b65;
+   color: white;
+}
+
+.topnav .icon {
+   display: none;
+}
+
+@media screen and (max-width: 600px) {
+   .topnav a:not(:first-child) {
+      display: none;
+   }
+   .topnav a.icon {
+      float: right;
+      display: block;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .topnav.responsive {
+      position: relative;
+   }
+   .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+   }
+   .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+   }
+}
+
+.content {
+   width: 100%;
+   margin: 0 auto;
+}
+.content h2 {
+   margin: 0;
+   padding: 25px 0;
+   font-size: 22px;
+   border-bottom: 1px solid #ebebeb;
+   color: #666666;
+}
+
+.reviews .overall_rating .num {
+   font-size: 30px;
+   font-weight: bold;
+   color: #f5a624;
+}
+.reviews .overall_rating .stars {
+   letter-spacing: 3px;
+   font-size: 32px;
+   color: #f5a624;
+   padding: 0 5px 0 10px;
+}
+.reviews .overall_rating .total {
+   color: #777777;
+   font-size: 14px;
+}
+.reviews .write_review_btn,
+.reviews .write_review button {
+   display: inline-block;
+   background-color: #565656;
+   color: #fff;
+   text-decoration: none;
+   margin: 10px 0 0 0;
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 14px;
+   font-weight: 600;
+   border: 0;
+}
+.reviews .write_review_btn:hover,
+.reviews .write_review button:hover {
+   background-color: #636363;
+}
+.reviews .write_review {
+   display: none;
+   padding: 20px 0 10px 0;
+}
+.reviews .write_review textarea {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   height: 150px;
+   margin-top: 10px;
+}
+.reviews .write_review input {
+   display: block;
+   width: 250px;
+   padding: 10px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   margin-top: 10px;
+}
+.reviews .write_review button {
+   cursor: pointer;
+}
+.reviews .review {
+   padding: 20px 0;
+   border-bottom: 1px solid #eee;
+}
+.reviews .review .name {
+   padding: 0 0 3px 0;
+   margin: 0;
+   font-size: 18px;
+   color: #555555;
+}
+.reviews .review .rating {
+   letter-spacing: 2px;
+   font-size: 22px;
+   color: #f5a624;
+}
+.reviews .review .date {
+   color: #777777;
+   font-size: 14px;
+}
+.reviews .review .content {
+   padding: 5px 0;
+}
+.reviews .review:last-child {
+   border-bottom: 0;
+}
+
+footer {
+   height: 22vh;
+   background-color: black;
+   color: white;
+   justify-content: center;
+}
+.icons {
+   color: white;
+   position: relative;
+
+   padding-top: 35px;
+   word-spacing: 60px;
+   text-align: center;
+}
+.icon:hover {
+   opacity: 0.7;
+}
+.bottext {
+   text-align: center;
+}
+.bottext1 {
+   color: white;
+}
+.bottext1:hover {
+   opacity: 0.7;
+}
+.bottext1 {
+   padding-left: 20px;
+}
+.cr {
+   text-align: center;
+   color: rgb(104, 104, 104);
+}

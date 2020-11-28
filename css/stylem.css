@@ -17,12 +17,12 @@ body {
    background-color: black;
    margin: 0;
    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
-   background-color: #181926;
+   background-color: #1b262c;
 }
 
 .topnav {
    overflow: hidden;
-   background-color: #7e8287;
+   background-color: #3c2c3e;
 }
 
 .topnav a {
@@ -42,7 +42,7 @@ body {
 }
 
 .topnav a.active {
-   background-color: gold;
+   background-color: #b52b65;
    color: white;
 }
 

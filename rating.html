@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link
+			   rel="stylesheet"
+			   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+			/>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+			<link
+			   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Permanent+Marker&family=Ubuntu&display=swap"
+			   rel="stylesheet"
+			/>
+	   <script src="js/main.js" type="text/javascript"></script>
+		  <meta charset="UTF-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <title>Rate Us</title>
+		  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Permanent+Marker&family=Ubuntu&display=swap" rel="stylesheet" />
+		  <link rel="stylesheet" href="css/reviews.css">
+	  </head>
+	  
+	  <body>
+	  <div class="topnav" id="myTopnav">
+			   <a href="index.html">InfoCorn</a>
+			   <a href="rating.html"  class="active" >Rate Us</a>
+			   <a href="contact.php"   >Contact Us</a>
+			   <a href="forum/forum.php" > Infocorn Forum</a>
+
+			   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				 <i class="fa fa-bars"></i>
+			   </a>
+			 </div>
+		   
+	 
+		<div class="content home">
+			<h2>Reviews</h2>
+            <p>Check out the below reviews for our website.</p>
+            <div class="reviews"></div>
+<script>
+const reviews_page_id = 1;
+fetch("reviews.php?page_id=" + reviews_page_id).then(response => response.text()).then(data => {
+	document.querySelector(".reviews").innerHTML = data;
+	document.querySelector(".reviews .write_review_btn").onclick = event => {
+		event.preventDefault();
+		document.querySelector(".reviews .write_review").style.display = 'block';
+		document.querySelector(".reviews .write_review input[name='name']").focus();
+	};
+	document.querySelector(".reviews .write_review form").onsubmit = event => {
+		event.preventDefault();
+		fetch("reviews.php?page_id=" + reviews_page_id, {
+			method: 'POST',
+			body: new FormData(document.querySelector(".reviews .write_review form"))
+		}).then(response => response.text()).then(data => {
+			document.querySelector(".reviews .write_review").innerHTML = data;
+		});
+	};
+});
+</script>
+		</div>
+		<footer>
+			<p class="icons">
+				<a href="www.facebook.com"><i class="fa fa-facebook-square fa-lg icon" aria-hidden="true"></i></a>
+				<a href="www.instagram.com"><i class="fa fa-instagram fa-lg icon" aria-hidden="true"></i></a>
+				<a href="www.twitch.com"><i class="fa fa-twitch fa-lg icon" aria-hidden="true"></i></a>
+				<a href="www.twitter.com"><i class="fa fa-twitter fa-lg icon" aria-hidden="true"></i></a>
+				<a href="www.youtube.com"><i class="fa fa-youtube-play fa-lg icon" aria-hidden="true"></i></a>
+			</p>
+			<p class="bottext">
+				<a href="index.html" class="bottext1">Home</a>
+				<a href="contact.php" class="bottext1">Contact Us</a>
+			   
+				<a href="https://www.themoviedb.org/" class="bottext1">API</a>
+			</p>
+			<p class="cr"><i class="fa fa-copyright" aria-hidden="true"></i> 2020 Infocorn.com</p>
+		</footer>
+	</body>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/57456f662e.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/rjs.js"></script>
+	
+	 <script src="https://kit.fontawesome.com/57456f662e.js" crossorigin="anonymous"></script>
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	   
+</html>

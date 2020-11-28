@@ -73,15 +73,29 @@ function getMovie() {
          }
          let vids = response.data.videos.results;
          let vid = "";
-         for (var i = 0; i < vids.length; i++) {
-            if (vids.length == 0) {
-               vid += "No Trailers Avialable";
-            } else {
-               vid += `
+         if (vids.length < 2) {
+            for (var i = 0; i < vids.length; i++) {
+               if (vids.length == 0) {
+                  vid += "No Trailers Avialable";
+               } else {
+                  vid += `
                 <iframe width="420" height="315"
                 src="https://www.youtube.com/embed/${vids[i].key}">
                 </iframe>
                 `;
+               }
+            }
+         } else {
+            for (var i = 0; i < 2; i++) {
+               if (vids.length == 0) {
+                  vid += "No Trailers Avialable";
+               } else {
+                  vid += `
+                <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/${vids[i].key}">
+                </iframe>
+                `;
+               }
             }
          }
          let recom = response.data.recommendations.results;
@@ -136,7 +150,6 @@ function getMovie() {
             <li class="l l2">   
             <h3>Cast</h3>
             <h2>Cast</h2>
-               
              ${actors}
             </li>
             </ul>
@@ -154,8 +167,8 @@ function getMovie() {
          <div class = "row">
                <ul class="tilesWrap">
                <li class = "l l2">
-               <h2>Recomendations</h2>
-               <h3>Recomendations</h3>
+               <h2>Similar Movies</h2>
+               <h3>Similar Movies</h3>
                ${recomd}
                <hr>
                </li>
